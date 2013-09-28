@@ -1,6 +1,6 @@
 SimpleHighlight.js
 =================
-**A tiny jQuery plugin for highlighting terms withing a string.**
+**A tiny jQuery plugin for highlighting terms within a string.**
 
 The idea is simple.
 

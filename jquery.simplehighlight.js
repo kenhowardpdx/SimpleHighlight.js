@@ -14,9 +14,10 @@
 
 	$.each(terms, function(i,term) {
 		var regex = new RegExp('(' + term + ')\\b','gi'),
-		    newStr = '<span class="matchedTerm">$1</span>';
+		    newStr = '##$1&&'; // To prevent highlighting html tags
 		string = string.replace(regex, newStr);
 	});
+	string = string.replace(/##/g,'<span class="matchedTerm">').replace(/&&/g,'</span>'); // Clean up for display
 	return string;
   };
   
