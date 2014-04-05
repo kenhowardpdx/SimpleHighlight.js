@@ -11,6 +11,12 @@
     body {
       font-family: Nunito, sans-serif;
     }
+    .matchedTerm {
+      background-color: #d30000;
+      color: #fff;
+      display: inline-block;
+      padding: 2px 4px;
+    }
   </style>
 
   <script>
@@ -28,11 +34,21 @@
 <body>
 
   <div class="container">
-    <h1>SimpleHighlight.JS</h1>
-    <h2>A tiny jQuery plugin for highlighting terms within a string.</h2>
+    <header>
+      <h1>SimpleHighlight.JS</h1>
+      <h2>A tiny jQuery plugin for highlighting terms within a string.</h2>
+    </header>
   </div>
 
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/jquery.simplehighlight.js"></script>
+  <script>
+    var string = $('header').html();
+  	var terms = ['simplehighlight.js','highlighting','terms'];
+  	var newString = $.simpleHighlight( string, terms );
+  	$('header').html(newString);
+  </script>
 
 </body>
 </html>
