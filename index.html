@@ -3,21 +3,10 @@
 <head>
 	<meta charset="utf-8" />
 	<title>SimpleHighlight.JS - A tiny jQuery plugin for highlighting terms within a string.</title>
-	<meta name="viewport" content="width=device-width; initial-scale=1.0;">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href='//fonts.googleapis.com/css?family=Nunito:400,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.css" type="text/css" />
-  <style type="text/css">
-    body {
-      font-family: Nunito, sans-serif;
-    }
-    .matchedTerm {
-      background-color: #d30000;
-      color: #fff;
-      display: inline-block;
-      padding: 2px 4px;
-    }
-  </style>
+  <link href="//fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="/css/style.css" type="text/css">
 
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -34,21 +23,22 @@
 <body>
 
   <div class="container">
-    <header>
-      <h1>SimpleHighlight.JS</h1>
-      <h2>A tiny jQuery plugin for highlighting terms within a string.</h2>
+    <header class="row">
+			<div class="col-xs-12">
+	      <h1><span class="matchedTerm">SimpleHighlight</span></h1>
+	      <h2>A jQuery plugin for <span class="matchedTerm">highlighting</span> <span class="matchedTerm">terms</span> in a string.</h2>
+			</div>
     </header>
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<a href="http://github.com/kenhowardpdx/SimpleHighlight.JS" class="btn btn-primary btn-xlg"><span class="glyphicon glyphicon-download"></span> Download on GitHub</a>
+			</div>
+		</div>
   </div>
 
   <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/jquery.simplehighlight.js"></script>
-  <script>
-    var string = $('header').html();
-  	var terms = ['simplehighlight.js','highlighting','terms'];
-  	var newString = $.simpleHighlight( string, terms );
-  	$('header').html(newString);
-  </script>
+  <script type="text/javascript" src="/js/sass-bootstrap.min.js"></script>
+  <script type="text/javascript" src="/js/jquery.simplehighlight.js"></script>
 
 </body>
 </html>
