@@ -7,6 +7,23 @@ module.exports = function(grunt) {
     watch: {
       options: {
         livereload: true,
+      },
+      css: {
+        files: ['sass/*.scss'],
+        tasks: ['compass'],
+        options: {
+            spawn: false
+        }
+      },
+      scripts: {
+        files: ['js/*.js'],
+        tasks: ['jshint'],
+        options: {
+          spawn: false
+        }
+      },
+      src: {
+        files: ['*.html']
       }
     },
 
@@ -18,6 +35,30 @@ module.exports = function(grunt) {
         }
       }
     },
+
+    compass: {                  // Task
+      dist: {                   // Target
+        options: {              // Target options
+          sassDir: 'sass',
+          cssDir: 'css',
+          environment: 'production'
+        }
+      }
+    },
+
+    jshint: {
+      // define the files to lint
+      files: ['Gruntfile.js', 'js/*.js'  ],
+      // configure JSHint (documented at http://www.jshint.com/docs/)
+      options: {
+          // more options here if you want to override JSHint defaults
+        globals: {
+          jQuery: true,
+          console: true,
+          module: true
+        }
+      }
+    }
 
   });
 
