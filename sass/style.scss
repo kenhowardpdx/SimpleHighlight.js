@@ -1,0 +1,71 @@
+@import "variables";
+@import "bootstrap";
+
+@function makelongshadow($color, $distance: 100) {
+  $val: 0px 0px $color;
+  @for $i from 1 through $distance {
+    $val: #{$val}, #{$i}px #{$i}px #{$color};
+  }
+  @return $val;
+}
+
+@mixin longshadow($color, $distance: 10) {
+  text-shadow: makelongshadow($color, $distance);
+}
+
+
+body {
+  font-family: Nunito, sans-serif;
+  background-color: $body-bg-color;
+  @include gradient-vertical(darken($body-bg-color, 25%), $body-bg-color);
+  background-repeat: no-repeat;
+}
+.matchedTerm {
+  color: $highlight-color;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 4em;
+  h1 {
+    font-size: 3.5em;
+    @include longshadow(darken($long-shadow-color, 30% ),20);
+    @media (min-width: $screen-sm-min) {
+      font-size: 6em;
+      @include longshadow(darken($long-shadow-color, 30% ),30);
+    }
+    @media (min-width: $screen-md-min) {
+      font-size: 8em;
+      @include longshadow(darken($long-shadow-color, 30% ),40);
+    }
+    @media (min-width: $screen-lg-min) {
+      font-size: 10em;
+      @include longshadow(darken($long-shadow-color, 30% ),50);
+    }
+    padding-bottom: .4em;
+    margin-bottom: 0;
+  }
+  h2 {
+    background-color: darken($long-shadow-color, 30%);
+    margin:0;
+    color: #fff;
+    padding: .3em 0;
+    font-size: 1.2em;
+    @media (min-width: $screen-md-min) {
+      font-size: 2em;
+    }
+  }
+}
+
+.btn-xlg {
+  font-size: 1.5em;
+  @media (min-width: $screen-sm-min) {
+    font-size: 2.5em;
+    border-radius: 10px;
+    padding: .2em .4em;
+  }
+  &:hover, &:focus {
+    background-color: $brand-success;
+    border-color: $brand-success;
+  }
+}
