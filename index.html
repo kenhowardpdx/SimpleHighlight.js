@@ -29,21 +29,44 @@
 	      <h2>A jQuery plugin for <span class="matchedTerm">highlighting</span> <span class="matchedTerm">terms</span> in a string.</h2>
 			</div>
     </header>
-		<div class="row">
-			<div class="col-xs-12 text-center">
-				<a href="http://github.com/kenhowardpdx/SimpleHighlight.JS" class="btn btn-primary btn-xlg"><span class="glyphicon glyphicon-download"></span> Download on GitHub</a>
-			</div>
+		<div class="text-center">
+			<a href="http://github.com/kenhowardpdx/SimpleHighlight.JS" class="btn btn-primary btn-xlg"><span class="glyphicon glyphicon-download"></span> Download on GitHub</a>
 		</div>
-		<div class"row">
-			<div class="col-xs-12 text-center">
-				<h3>SimpleHighlight.js was built by <a href="http://kenhowardpdx.com">Ken Howard</a>, a Front End Developer at <a href="http://csgpro.com">CSG Pro</a>.</h3>
+		<div class="panel panel-default">
+		<div class="panel-heading"><span class="h3">Try it for yourself</span></div>
+		<div class="panel-body">
+			<div class="col-xs-12">
+			<div class="form-group">
+				<label for="search" class="control-label"><span class="h4">Search</span></label>
+				<input type="text" class="form-control" id="search">
+				<button class="search btn btn-default">Search</button>
 			</div>
+		<p class="sampleText">
+			A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream.</p>
+		</div>
+		</div>
+	</div>
+		<div class="text-center">
+			<h3>SimpleHighlight.js was built by <a href="http://kenhowardpdx.com">Ken Howard</a>, a Front End Developer at <a href="http://csgpro.com">CSG Pro</a>.</h3>
 		</div>
   </div>
 
   <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="/js/sass-bootstrap.min.js"></script>
   <script type="text/javascript" src="/js/jquery.simplehighlight.js"></script>
+	<script>
+		    $('button.search').on('click', function (e) {
+					e.preventDefault();
+					showHighlight($(this).prev().val());
+				});
 
+				var sampleString = $('.sampleText').html();
+
+				function showHighlight(terms) {
+				    var string = sampleString;
+				    highlight = terms.trim().split(' ');
+				    $('.sampleText').html($.simpleHighlight( string, highlight ));
+				}
+	</script>
 </body>
 </html>

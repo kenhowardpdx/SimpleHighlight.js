@@ -20,6 +20,13 @@ body {
   @include gradient-vertical(darken($body-bg-color, 25%), $body-bg-color);
   background-repeat: no-repeat;
 }
+
+p, ul, ol {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 2em;
+}
+
+
 .matchedTerm {
   color: $highlight-color;
 }
@@ -78,5 +85,15 @@ header {
     @media (min-width: $screen-sm-min) {
       top: 6px;
     }
+  }
+}
+
+.form-group {
+  label, input {
+    display: inline;
+    width: auto;
+  }
+  input {
+    width: 50%;
   }
 }
