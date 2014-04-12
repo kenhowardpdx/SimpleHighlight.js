@@ -16,7 +16,7 @@ module.exports = function(grunt) {
         }
       },
       scripts: {
-        files: ['js/*.js'],
+        files: ['js/jquery.simplehighlight.js'],
         tasks: ['jshint'],
         options: {
           spawn: false
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
 
     jshint: {
       // define the files to lint
-      files: ['Gruntfile.js', 'js/*.js'  ],
+      files: ['Gruntfile.js', 'js/jquery.simplehighlight.js'  ],
       // configure JSHint (documented at http://www.jshint.com/docs/)
       options: {
           // more options here if you want to override JSHint defaults

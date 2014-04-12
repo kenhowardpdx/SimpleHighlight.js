@@ -13,7 +13,7 @@
   $.simpleHighlight = function( string, terms ) {
 
 	$.each(terms, function(i,term) {
-		var regex = new RegExp('(' + term + ')\\b','gi'),
+		var regex = new RegExp('(\\b' + term + '\\b)','gi'),
 		    newStr = '##$1&&'; // To prevent highlighting html tags
 		string = string.replace(regex, newStr);
 	});
