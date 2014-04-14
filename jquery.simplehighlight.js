@@ -13,13 +13,17 @@
   $.simpleHighlight = function( string, terms ) {
 
 	$.each(terms, function(i,term) {
-		var regex = new RegExp('(' + term + ')\\b','gi'),
+		var regex = new RegExp('(\\b' + escapeRegExp(term) + '\\b)','gi'),
 		    newStr = '##$1&&'; // To prevent highlighting html tags
 		string = string.replace(regex, newStr);
 	});
 	string = string.replace(/##/g,'<span class="matchedTerm">').replace(/&&/g,'</span>'); // Clean up for display
 	return string;
   };
-  
+
+  function escapeRegExp(string){
+    return string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+  }
+
 // Works with either jQuery or Zepto
 })( window.jQuery || window.Zepto );
