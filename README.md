@@ -38,16 +38,3 @@ Add some CSS to handle your highlighted terms.
   color: green;
 }
 ```
-
-Changelog
-=========
-
-* *09.27.13 - v1.0.0 - 558b*
-  * Initial release
-  * String in, string out
-
-Credits
-=======
-
-@kenhowardpdx
-
